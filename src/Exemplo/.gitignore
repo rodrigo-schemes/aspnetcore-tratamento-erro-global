@@ -400,6 +400,20 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/.idea.Exemplo.iml
+/projectSettingsUpdater.xml
+/modules.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
 ##
 ## Visual studio for Mac
 ##
