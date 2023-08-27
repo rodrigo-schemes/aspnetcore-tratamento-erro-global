@@ -9,17 +9,17 @@ public class PrevisaoController : ControllerBase
     [HttpGet]
     public Task<IActionResult> ObterPrevisao()
     {
-        var climas = new[]
+        var condicoesClimaticas = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Nevoeiro", "Céu claro", "Sol", "Nublado", "Encoberto", "Chuvoso", "Neve", "Trovoadas", "Geada", "Garoa"
         };
         
         var previsoes = Enumerable.Range(1, 5).Select(index =>
                 new PrevisaoTempo
                 (
                     DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    climas[Random.Shared.Next(climas.Length)]
+                    condicoesClimaticas[Random.Shared.Next(condicoesClimaticas.Length)],
+                    Random.Shared.Next(-20, 55)
                 ))
             .ToArray();
         
@@ -27,7 +27,7 @@ public class PrevisaoController : ControllerBase
     }
     
     [HttpPost]
-    public Task<IActionResult> GravarPrevisaoComErro()
+    public Task<IActionResult> AdicionarPrevisao()
     {
         throw new Exception("Exceção causada intencionalmente");
     }
